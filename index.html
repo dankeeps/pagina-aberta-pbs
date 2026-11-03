@@ -8,11 +8,13 @@
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light only">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23d81b72'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='20' fill='%23fff' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="assets/fontes/nunito-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fontes/funnel-display.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/webp" imagesrcset="assets/mockup-800.webp 800w, assets/mockup-1200.webp 1200w, assets/mockup-1487.webp 1487w" imagesizes="(min-width: 900px) 700px, 100vw">
 <!-- TRACKING: colar aqui o snippet do domínio onde a página for publicada -->
 <style>
 @font-face{font-family:"Funnel Display";src:url(assets/fontes/funnel-display.woff2) format("woff2");font-weight:500 800;font-display:swap}
+@font-face{font-family:"Nunito";src:url(assets/fontes/nunito-900.woff2) format("woff2");font-weight:900;font-display:swap}
 
 /* Conceito: a página fala a língua do app. Branco, cantos grandes, pílulas e a grade de constância,
    com um rosa só e sólido. A fonte de corpo é a do sistema, a mesma do app no iPhone, e abre sem espera. */
@@ -27,6 +29,7 @@
   --rosa:#d81b72;
   --rosa-esc:#b8125e;
   --display:"Funnel Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --headline:"Nunito",ui-rounded,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
   --corpo:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --ease:cubic-bezier(.2,.7,.2,1);
   --lateral:max(20px,env(safe-area-inset-left,0px));
@@ -66,7 +69,7 @@ h3{font-size:22px;font-weight:700;line-height:1.14;letter-spacing:-.015em}
 .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:26px;padding-bottom:40px}
 .marca{display:inline-flex;align-items:center;gap:8px;font:700 clamp(11px,3.2vw,13px)/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
 .app-ico{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--rosa);color:var(--branco);font-size:15px;letter-spacing:0}
-.hero h1{max-width:13.5em;margin-top:18px;font-size:clamp(33px,9.7vw,62px);font-weight:700;line-height:1.02;letter-spacing:-.032em}
+.hero h1{max-width:13.5em;margin-top:18px;font-family:var(--headline);font-size:clamp(34px,10vw,64px);font-weight:900;line-height:1.08;letter-spacing:-.03em}
 .v{color:var(--rosa);animation:rosa .7s ease both}
 .v1{animation-delay:.5s}.v2{animation-delay:.72s}.v3{animation-delay:.94s}
 @keyframes rosa{from{color:var(--tinta)}to{color:var(--rosa)}}
@@ -90,50 +93,27 @@ h3{font-size:22px;font-weight:700;line-height:1.14;letter-spacing:-.015em}
 @keyframes corre{to{transform:translateX(-50%)}}
 
 /* Como funciona */
-.funciona{display:grid;gap:30px}
-.funciona-txt p{margin-top:14px;max-width:32em;color:var(--cinza)}
-.quiz{display:grid;gap:22px;min-width:0}
-.q{min-width:0;margin:0;padding:0;border:0}
-.q legend{padding:0 0 10px;font-weight:600;line-height:1.3}
-.ops{position:relative;display:flex;gap:8px}
-.ops input{position:absolute;opacity:0;pointer-events:none}
-.ops label{flex:1 1 0;min-width:0;display:grid;place-items:center;min-height:50px;padding:0 8px;border:1.5px solid var(--linha);border-radius:14px;font-weight:600;font-size:16px;text-align:center;line-height:1.15;cursor:pointer;touch-action:manipulation;transition:background .25s,color .25s,border-color .25s,transform .2s var(--ease)}
-.ops label:active{transform:scale(.96)}
-.ops input:checked+label{background:var(--rosa);border-color:var(--rosa);color:var(--branco)}
-.ops input:focus-visible+label{outline:2px solid var(--tinta);outline-offset:2px}
-
-.plano{margin-top:2px;padding:22px 20px 20px;border:1.5px solid var(--pilula);border-radius:24px;background:var(--branco)}
-.plano-topo{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
-.plano-topo h3{font-size:21px}
-.plano-n{flex:none;color:var(--rosa);font:700 16px/1 var(--display);font-variant-numeric:tabular-nums}
-.plano-n b{font-size:26px;font-weight:800}
-.plano p{margin-top:6px;color:var(--cinza);font-size:16px;line-height:1.4}
-.plano .plano-det{margin-top:2px;color:var(--tinta);font-weight:600}
-.grade{display:grid;grid-template-columns:14px repeat(8,minmax(0,1fr));gap:5px;margin-top:16px}
-.grade b{color:var(--cinza);font:600 10px/12px var(--corpo);text-align:center}
-.grade i{height:12px;border-radius:4px;background:var(--vazio);transition:background .3s ease calc(var(--s,0)*30ms)}
-.grade i.on{background:var(--rosa)}
-.plano.pre .grade i.on{background:var(--vazio)}
-.grade-rodape{display:flex;justify-content:space-between;margin:8px 0 0 19px;color:var(--cinza);font-size:12px}
-.fecho{font-weight:600}
+.funciona{display:grid;gap:22px}
+.funciona-cab p{margin-top:14px;max-width:32em;color:var(--cinza)}
+.itens{display:grid;gap:14px}
+.itens li{display:grid;grid-template-columns:10px minmax(0,1fr);gap:13px;font-size:18px;font-weight:600;line-height:1.35}
+.itens li::before{content:"";width:10px;height:10px;margin-top:.42em;border-radius:50%;background:var(--rosa)}
+.fecho{color:var(--cinza)}
 
 /* App */
 .app-sec{padding-top:0}
-.pilha{display:flex;flex-direction:column;gap:14px;margin-top:28px}
-.tela{position:sticky;top:calc(12px + var(--i)*11px);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--pilula);border-radius:28px;background:var(--blush)}
-.tela-txt{min-height:206px;padding:20px 20px 18px}
+.trilho{--margem:max(var(--lateral),calc((100vw - 1040px)/2));display:flex;gap:12px;margin-top:26px;padding-inline:var(--margem);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--margem);scrollbar-width:none;cursor:grab;outline-offset:-2px}
+.trilho::-webkit-scrollbar{display:none}
+.trilho.arrasta{scroll-snap-type:none;cursor:grabbing;user-select:none;-webkit-user-select:none}
+.tela{flex:0 0 min(82vw,340px);display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--pilula);border-radius:28px;background:var(--blush);scroll-snap-align:start;scroll-snap-stop:always}
+.tela-txt{padding:20px 20px 16px}
 .tela-txt h3{margin-top:13px}
 .tela-txt p{margin-top:7px;color:var(--cinza);font-size:16px;line-height:1.42}
-.tela-img{position:relative;aspect-ratio:10/9;margin:auto 16px 0;overflow:hidden;border:1px solid var(--pilula);border-bottom:0;border-radius:20px 20px 0 0;background:var(--branco)}
-.tela-img img{width:100%;height:100%;object-fit:cover;object-position:top}
-.ex{display:contents}
-.ex>input{position:absolute;opacity:0;pointer-events:none}
-.ex-imgs img{position:absolute;inset:0;opacity:0;transition:opacity .5s ease}
-#ex1:checked~.ex-imgs img:nth-child(1),#ex2:checked~.ex-imgs img:nth-child(2),#ex3:checked~.ex-imgs img:nth-child(3){opacity:1}
-.seg{position:absolute;left:50%;bottom:12px;z-index:2;display:flex;gap:2px;padding:3px;border:1px solid var(--linha);border-radius:14px;background:var(--branco);transform:translateX(-50%);box-shadow:0 6px 18px rgba(28,18,22,.1)}
-.seg label{padding:9px 14px;border-radius:11px;font-size:14px;font-weight:600;line-height:1;color:var(--cinza);cursor:pointer;touch-action:manipulation;transition:background .25s,color .25s}
-#ex1:checked~.ex-imgs label[for=ex1],#ex2:checked~.ex-imgs label[for=ex2],#ex3:checked~.ex-imgs label[for=ex3]{background:var(--rosa);color:var(--branco)}
-.ex>input:focus-visible~.ex-imgs .seg{outline:2px solid var(--tinta);outline-offset:2px}
+.tela-img{aspect-ratio:10/9;margin:auto 16px 0;overflow:hidden;border:1px solid var(--pilula);border-bottom:0;border-radius:20px 20px 0 0;background:var(--branco)}
+.tela-img img{width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none}
+.pontos{display:flex;justify-content:center;gap:6px;margin-top:16px}
+.pontos i{width:7px;height:7px;border-radius:99px;background:var(--pilula);transition:width .3s var(--ease),background .3s}
+.pontos i.on{width:22px;background:var(--rosa)}
 
 /* Bônus */
 .bonus-sec{padding-top:0}
@@ -217,25 +197,13 @@ footer p+p{margin-top:5px}
 .rv{transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv.pre{opacity:.25;transform:translateY(20px)}
 
-@media (max-height:640px){.tela{position:static}}
-@media (max-width:359px){
-  .tela-txt{min-height:232px}
-  .ops label{font-size:15px}
-  .seg label{padding:9px 11px}
-}
 @media (min-width:900px){
   h3{font-size:24px}
   .hero{padding-top:44px;padding-bottom:64px}
   .mockup{width:100%;margin:30px 0 24px}
-  .funciona{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"txt plano" "quiz plano" "quiz fecho";grid-template-rows:auto auto 1fr;gap:26px 64px;align-items:start}
-  .funciona-txt{grid-area:txt}
-  .funciona .quiz{grid-area:quiz}
-  .funciona .plano{grid-area:plano;margin-top:0}
-  .fecho{grid-area:fecho}
-  .pilha{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-  .tela{position:static}
-  .tela-txt{min-height:0;padding:26px 28px 22px}
-  .tela-img{margin-inline:28px}
+  .funciona{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 64px;align-items:start}
+  .funciona-cab{grid-row:1 / span 2}
+  .tela{flex-basis:360px}
   .bonus-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:start;margin-top:32px}
   .bonus-foto{margin-top:0;position:sticky;top:24px}
   .bonus-lista{margin-top:-20px}
@@ -276,47 +244,16 @@ footer p+p{margin-top:5px}
 </div>
 
 <section class="bloco wrap funciona" id="como-funciona">
-  <div class="funciona-txt rv">
+  <div class="funciona-cab rv">
     <h2>Como funciona o PBS?</h2>
     <p>Você responde algumas perguntas e recebe um treino personalizado. Você escolhe:</p>
   </div>
 
-  <form class="quiz rv" id="quiz">
-    <fieldset class="q">
-      <legend>Quantas vezes na semana quer treinar</legend>
-      <div class="ops">
-        <input type="radio" name="dias" id="d2" value="2"><label for="d2">2x</label>
-        <input type="radio" name="dias" id="d3" value="3" checked><label for="d3">3x</label>
-        <input type="radio" name="dias" id="d4" value="4"><label for="d4">4x</label>
-        <input type="radio" name="dias" id="d5" value="5"><label for="d5">5x</label>
-      </div>
-    </fieldset>
-    <fieldset class="q">
-      <legend>Treina na academia ou em casa</legend>
-      <div class="ops">
-        <input type="radio" name="onde" id="casa" value="Em casa" checked><label for="casa">Em casa</label>
-        <input type="radio" name="onde" id="academia" value="Na academia"><label for="academia">Na academia</label>
-      </div>
-    </fieldset>
-    <fieldset class="q">
-      <legend>15 minutos ou um treino completo</legend>
-      <div class="ops">
-        <input type="radio" name="tempo" id="t15" value="15 minutos" checked><label for="t15">15 minutos</label>
-        <input type="radio" name="tempo" id="tc" value="Treino completo"><label for="tc">Treino completo</label>
-      </div>
-    </fieldset>
-  </form>
-
-  <div class="plano rv" id="plano" aria-live="polite">
-    <div class="plano-topo">
-      <h3>Seu plano está pronto</h3>
-      <span class="plano-n"><b id="p-total">24</b> treinos</span>
-    </div>
-    <p id="p-resumo">3 treinos por semana, durante 8 semanas.</p>
-    <p class="plano-det" id="p-det">Em casa · 15 minutos</p>
-    <div class="grade" id="grade" aria-hidden="true"></div>
-    <div class="grade-rodape" aria-hidden="true"><span>Semana 1</span><span>Semana 8</span></div>
-  </div>
+  <ul class="itens rv">
+    <li>Quantas vezes na semana quer treinar</li>
+    <li>Treina na academia ou em casa</li>
+    <li>15 minutos ou um treino completo</li>
+  </ul>
 
   <p class="fecho rv">O treino é personalizado com base nas suas respostas.</p>
 </section>
@@ -324,55 +261,59 @@ footer p+p{margin-top:5px}
 <section class="bloco app-sec" id="app">
   <div class="wrap">
     <h2 class="rv">Tudo isso dentro de um aplicativo</h2>
-
-    <div class="pilha">
-      <article class="tela" style="--i:0">
-        <div class="tela-txt">
-          <span class="pill">Treino guiado</span>
-          <h3>Abriu o app, o treino do dia está pronto</h3>
-          <p>Você vê os exercícios de hoje, quanto tempo leva e aperta o play.</p>
-        </div>
-        <figure class="tela-img"><img src="assets/tela-treino.webp" width="900" height="810" alt="Tela do treino de sábado com os exercícios de glúteo do dia" loading="lazy" decoding="async"></figure>
-      </article>
-
-      <article class="tela" style="--i:1">
-        <div class="tela-txt">
-          <span class="pill">Planilha</span>
-          <h3>Seu treino, semana a semana</h3>
-          <p>Cada dia já tem o treino certo, do começo ao fim das 8 semanas.</p>
-        </div>
-        <figure class="tela-img"><img src="assets/tela-planilha.webp" width="900" height="810" alt="Planilha da semana 1 com os treinos de sábado, segunda e quarta" loading="lazy" decoding="async"></figure>
-      </article>
-
-      <article class="tela" style="--i:2">
-        <div class="tela-txt">
-          <span class="pill">Exercícios</span>
-          <h3>Vídeo, séries e repetições</h3>
-          <p>Cada exercício mostra o vídeo e a quantidade exata de séries. Você só segue.</p>
-        </div>
-        <div class="ex">
-          <input type="radio" name="ex" id="ex1" aria-label="Treino de glúteos" checked>
-          <input type="radio" name="ex" id="ex2" aria-label="Treino de pernas">
-          <input type="radio" name="ex" id="ex3" aria-label="Treino de abdução">
-          <figure class="tela-img ex-imgs">
-            <img src="assets/ex-gluteos.webp" width="900" height="810" alt="Treino de glúteos com frog no solo, glúteo 4 apoios, ostra e extensão de quadril" loading="lazy" decoding="async">
-            <img src="assets/ex-pernas.webp" width="900" height="810" alt="Treino de pernas com agachamento, afundo, passada lateral e elevação pélvica" loading="lazy" decoding="async">
-            <img src="assets/ex-abducao.webp" width="900" height="810" alt="Treino de abdução com extensão de quadril, ostra, passada lateral e glúteo 4 apoios" loading="lazy" decoding="async">
-            <div class="seg"><label for="ex1">Glúteos</label><label for="ex2">Pernas</label><label for="ex3">Abdução</label></div>
-          </figure>
-        </div>
-      </article>
-
-      <article class="tela" style="--i:3">
-        <div class="tela-txt">
-          <span class="pill">Progresso</span>
-          <h3>Acompanhe sua evolução</h3>
-          <p>Veja quantos treinos já fez, os minutos treinados e a sua constância.</p>
-        </div>
-        <figure class="tela-img"><img src="assets/tela-progresso.webp" width="900" height="810" alt="Tela de progresso com a porcentagem do plano, os treinos feitos e os minutos treinados" loading="lazy" decoding="async"></figure>
-      </article>
-    </div>
   </div>
+
+  <div class="trilho" id="carrossel" tabindex="0" role="region" aria-label="Telas do aplicativo">
+    <article class="tela">
+      <div class="tela-txt">
+        <span class="pill">Treino guiado</span>
+        <h3>Abriu o app, o treino do dia está pronto</h3>
+        <p>Você vê os exercícios de hoje, quanto tempo leva e aperta o play.</p>
+      </div>
+      <figure class="tela-img"><img src="assets/tela-treino.webp" width="900" height="810" alt="Tela do treino de sábado com os exercícios de glúteo do dia" loading="lazy" decoding="async" draggable="false"></figure>
+    </article>
+    <article class="tela">
+      <div class="tela-txt">
+        <span class="pill">Planilha</span>
+        <h3>Seu treino, semana a semana</h3>
+        <p>Cada dia já tem o treino certo, do começo ao fim das 8 semanas.</p>
+      </div>
+      <figure class="tela-img"><img src="assets/tela-planilha.webp" width="900" height="810" alt="Planilha da semana 1 com os treinos de sábado, segunda e quarta" loading="lazy" decoding="async" draggable="false"></figure>
+    </article>
+    <article class="tela">
+      <div class="tela-txt">
+        <span class="pill">Exercícios</span>
+        <h3>Treino de glúteos</h3>
+        <p>Cada exercício tem vídeo e a quantidade exata de séries e repetições.</p>
+      </div>
+      <figure class="tela-img"><img src="assets/ex-gluteos.webp" width="900" height="810" alt="Treino de glúteos com frog no solo, glúteo 4 apoios, ostra e extensão de quadril" loading="lazy" decoding="async" draggable="false"></figure>
+    </article>
+    <article class="tela">
+      <div class="tela-txt">
+        <span class="pill">Exercícios</span>
+        <h3>Treino de pernas</h3>
+        <p>Você vê o que fazer em cada dia e só segue o vídeo.</p>
+      </div>
+      <figure class="tela-img"><img src="assets/ex-pernas.webp" width="900" height="810" alt="Treino de pernas com agachamento, afundo, passada lateral e elevação pélvica" loading="lazy" decoding="async" draggable="false"></figure>
+    </article>
+    <article class="tela">
+      <div class="tela-txt">
+        <span class="pill">Exercícios</span>
+        <h3>Treino de abdução</h3>
+        <p>Cada treino da semana tem um foco diferente.</p>
+      </div>
+      <figure class="tela-img"><img src="assets/ex-abducao.webp" width="900" height="810" alt="Treino de abdução com extensão de quadril, ostra, passada lateral e glúteo 4 apoios" loading="lazy" decoding="async" draggable="false"></figure>
+    </article>
+    <article class="tela">
+      <div class="tela-txt">
+        <span class="pill">Progresso</span>
+        <h3>Acompanhe sua evolução</h3>
+        <p>Veja quantos treinos já fez, os minutos treinados e a sua constância.</p>
+      </div>
+      <figure class="tela-img"><img src="assets/tela-progresso.webp" width="900" height="810" alt="Tela de progresso com a porcentagem do plano, os treinos feitos e os minutos treinados" loading="lazy" decoding="async" draggable="false"></figure>
+    </article>
+  </div>
+  <div class="pontos" id="pontos" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
 </section>
 
 <section class="bloco wrap bonus-sec" id="bonus">
@@ -519,39 +460,6 @@ var CONFIG = {
     $$("[data-checkout]").forEach(function (a) { a.href = url.toString(); });
   }
 
-  /* Monta o plano de exemplo, na mesma grade de constância do app */
-  var DIAS = { 2: [1, 4], 3: [1, 3, 6], 4: [1, 2, 4, 6], 5: [1, 2, 3, 4, 6] };
-  var grade = $("#grade"), total = $("#p-total"), form = $("#quiz");
-  var html = "";
-  ["D", "S", "T", "Q", "Q", "S", "S"].forEach(function (letra, d) {
-    html += "<b>" + letra + "</b>";
-    for (var s = 0; s < 8; s++) html += '<i data-d="' + d + '" style="--s:' + s + '"></i>';
-  });
-  grade.innerHTML = html;
-  var celulas = $$("i", grade);
-
-  function conta(para) {
-    var de = +total.textContent;
-    if (parado || de === para) { total.textContent = para; return; }
-    var t0 = performance.now();
-    (function passo(t) {
-      var p = Math.min((t - t0) / 320, 1);
-      total.textContent = Math.round(de + (para - de) * p);
-      if (p < 1) requestAnimationFrame(passo);
-    })(t0);
-  }
-
-  function atualiza() {
-    var f = new FormData(form), n = +f.get("dias");
-    $("#p-resumo").textContent = n + " treinos por semana, durante " + CONFIG.semanas + " semanas.";
-    $("#p-det").textContent = f.get("onde") + " · " + f.get("tempo");
-    conta(n * CONFIG.semanas);
-    celulas.forEach(function (c) { c.classList.toggle("on", DIAS[n].indexOf(+c.dataset.d) > -1); });
-  }
-  form.addEventListener("change", atualiza);
-  form.addEventListener("submit", function (e) { e.preventDefault(); });
-  atualiza();
-
   if (!("IntersectionObserver" in window)) return;
 
   /* Entrada ao rolar */
@@ -568,21 +476,86 @@ var CONFIG = {
       el.classList.add("pre");
       entra.observe(el);
     });
-
-    /* Troca sozinha entre os treinos enquanto a tela está visível, até a pessoa tocar */
-    var abas = $$('input[name="ex"]'), relogio = null, tocou = false;
-    new IntersectionObserver(function (itens) {
-      clearInterval(relogio);
-      if (!itens[0].isIntersecting || tocou) return;
-      relogio = setInterval(function () {
-        var atual = abas.findIndex(function (r) { return r.checked; });
-        abas[(atual + 1) % abas.length].checked = true;
-      }, 3200);
-    }, { threshold: 0.6 }).observe($(".ex-imgs"));
-    abas.forEach(function (r) {
-      r.addEventListener("change", function () { tocou = true; clearInterval(relogio); });
-    });
   }
+
+  /* Carrossel do app: passa sozinho, pausa quando a pessoa mexe. As cópias no fim fecham o giro sem voltar de ré. */
+  var trilho = $("#carrossel"), cards = $$(".tela", trilho), pontos = $$("i", $("#pontos"));
+  var total = cards.length, visivel = false, mexendo = false, sobre = false;
+  var relogio = null, volta = null, fimRolagem = null;
+
+  cards.forEach(function (c) {
+    var copia = c.cloneNode(true);
+    copia.setAttribute("aria-hidden", "true");
+    trilho.appendChild(copia);
+  });
+
+  function passo() { return cards[1].offsetLeft - cards[0].offsetLeft; }
+  function indice() { return Math.round(trilho.scrollLeft / passo()); }
+  function reposiciona() { if (indice() >= total) trilho.scrollLeft -= total * passo(); }
+  function marca() {
+    var i = indice() % total;
+    pontos.forEach(function (p, n) { p.classList.toggle("on", n === i); });
+  }
+
+  function proximo() {
+    if (mexendo || sobre || document.hidden) return;
+    reposiciona();
+    trilho.scrollTo({ left: (indice() + 1) * passo(), behavior: "smooth" });
+  }
+  function toca() {
+    clearInterval(relogio);
+    if (!parado && visivel) relogio = setInterval(proximo, 3800);
+  }
+  function para() { mexendo = true; clearTimeout(volta); clearInterval(relogio); }
+  function solta() { mexendo = false; clearTimeout(volta); volta = setTimeout(toca, 4000); }
+
+  trilho.addEventListener("scroll", function () {
+    requestAnimationFrame(marca);
+    clearTimeout(fimRolagem);
+    fimRolagem = setTimeout(function () { if (!mexendo) reposiciona(); }, 140);
+  }, { passive: true });
+
+  trilho.addEventListener("touchstart", para, { passive: true });
+  trilho.addEventListener("touchend", solta);
+  trilho.addEventListener("touchcancel", solta);
+  trilho.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") sobre = true; });
+  trilho.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") sobre = false; });
+
+  /* Arrastar com o mouse; no celular o toque já rola nativo */
+  var arrastando = false, inicioX = 0, inicioRolagem = 0;
+  trilho.addEventListener("pointerdown", function (e) {
+    if (e.pointerType !== "mouse") return;
+    arrastando = true;
+    inicioX = e.clientX;
+    inicioRolagem = trilho.scrollLeft;
+    para();
+    trilho.classList.add("arrasta");
+    trilho.setPointerCapture(e.pointerId);
+  });
+  trilho.addEventListener("pointermove", function (e) {
+    if (arrastando) trilho.scrollLeft = inicioRolagem - (e.clientX - inicioX);
+  });
+  function fimArrasto() {
+    if (!arrastando) return;
+    arrastando = false;
+    trilho.scrollTo({ left: indice() * passo(), behavior: "smooth" });
+    setTimeout(function () { trilho.classList.remove("arrasta"); }, 400);
+    solta();
+  }
+  trilho.addEventListener("pointerup", fimArrasto);
+  trilho.addEventListener("pointercancel", fimArrasto);
+
+  /* Imagem lazy dentro de rolagem lateral só carrega ao aparecer; aqui carrega todas antes */
+  new IntersectionObserver(function (itens, olhar) {
+    if (!itens[0].isIntersecting) return;
+    $$("img", trilho).forEach(function (img) { img.loading = "eager"; });
+    olhar.disconnect();
+  }, { rootMargin: "600px 0px" }).observe(trilho);
+
+  new IntersectionObserver(function (itens) {
+    visivel = itens[0].isIntersecting;
+    if (visivel) { if (!mexendo) toca(); } else clearInterval(relogio);
+  }, { threshold: 0.4 }).observe(trilho);
 
   /* Barra fixa: some enquanto já existe um botão ou o preço na tela */
   var barra = $("#barra"), visiveis = new Map();
