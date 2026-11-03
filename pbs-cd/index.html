@@ -8,13 +8,12 @@
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light only">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23d81b72'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='20' fill='%23fff' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="assets/fontes/nunito-900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fontes/funnel-display.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" type="image/webp" imagesrcset="assets/mockup-800.webp 800w, assets/mockup-1200.webp 1200w, assets/mockup-1487.webp 1487w" imagesizes="(min-width: 900px) 700px, 100vw">
-<!-- TRACKING: colar aqui o snippet do domínio onde a página for publicada -->
+<link rel="preload" href="/pbs-cd/assets/fontes/nunito-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/pbs-cd/assets/fontes/funnel-display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" imagesrcset="/pbs-cd/assets/mockup-800.webp 800w, /pbs-cd/assets/mockup-1200.webp 1200w, /pbs-cd/assets/mockup-1487.webp 1487w" imagesizes="(min-width: 900px) 700px, 100vw">
 <style>
-@font-face{font-family:"Funnel Display";src:url(assets/fontes/funnel-display.woff2) format("woff2");font-weight:500 800;font-display:swap}
-@font-face{font-family:"Nunito";src:url(assets/fontes/nunito-900.woff2) format("woff2");font-weight:900;font-display:swap}
+@font-face{font-family:"Funnel Display";src:url(/pbs-cd/assets/fontes/funnel-display.woff2) format("woff2");font-weight:500 800;font-display:swap}
+@font-face{font-family:"Nunito";src:url(/pbs-cd/assets/fontes/nunito-900.woff2) format("woff2");font-weight:900;font-display:swap}
 
 /* Mesma página do app-pbs, versão com 40% de desconto: o rosa segue como marca,
    e o verde aparece só no que é desconto (título, cartão com o timer e selo de preço). */
@@ -175,6 +174,11 @@ footer p+p{margin-top:5px}
 </style>
 </head>
 <body>
+<script>
+(function(s,e,n,t,i){s[n]=s[n]||function(){(s[n].q=s[n].q||[]).push(arguments)};
+var js=e.createElement('script');js.async=1;js.src=t+'?tid='+i;
+e.head.appendChild(js)})(window,document,'sentinel','https://track.akellensbardelotto.com.br/api/t/tracker.js','f88e6e1b-0fd3-482d-9fdf-38c67dfdaf8b');
+</script>
 <main>
 
 <header class="hero wrap">
@@ -195,7 +199,7 @@ footer p+p{margin-top:5px}
     <p class="desc-preco">De <s data-preco="de">R$147</s> por <b>12x de <span data-preco="parcela">R$8,84</span></b> <span class="nw">ou <b data-preco="avista">R$87</b> à vista</span></p>
   </div>
 
-  <img class="mockup" src="assets/mockup-1200.webp" srcset="assets/mockup-800.webp 800w, assets/mockup-1200.webp 1200w, assets/mockup-1487.webp 1487w" sizes="(min-width: 900px) 700px, 100vw" width="1487" height="957" alt="App Bumbum dos Sonhos aberto no tablet e no celular, mostrando o treino do dia" fetchpriority="high" decoding="async">
+  <img class="mockup" src="/pbs-cd/assets/mockup-1200.webp" srcset="/pbs-cd/assets/mockup-800.webp 800w, /pbs-cd/assets/mockup-1200.webp 1200w, /pbs-cd/assets/mockup-1487.webp 1487w" sizes="(min-width: 900px) 700px, 100vw" width="1487" height="957" alt="App Bumbum dos Sonhos aberto no tablet e no celular, mostrando o treino do dia" fetchpriority="high" decoding="async">
   <a class="cta" data-checkout href="https://pay.hub.la/bhXrTXho9Op0k0JukOEk">GARANTIR MEU DESCONTO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   <p class="nota">7 dias de garantia · Acesso vitalício</p>
 </header>
@@ -212,7 +216,7 @@ footer p+p{margin-top:5px}
         <h3>Abriu o app, o treino do dia está pronto</h3>
         <p>Você vê os exercícios de hoje, quanto tempo leva e aperta o play.</p>
       </div>
-      <figure class="tela-img"><img src="assets/tela-treino.webp" width="900" height="810" alt="Tela do treino de sábado com os exercícios de glúteo do dia" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="tela-img"><img src="/pbs-cd/assets/tela-treino.webp" width="900" height="810" alt="Tela do treino de sábado com os exercícios de glúteo do dia" loading="lazy" decoding="async" draggable="false"></figure>
     </article>
     <article class="tela">
       <div class="tela-txt">
@@ -220,7 +224,7 @@ footer p+p{margin-top:5px}
         <h3>Seu treino, semana a semana</h3>
         <p>Cada dia já tem o treino certo, do começo ao fim das 8 semanas.</p>
       </div>
-      <figure class="tela-img"><img src="assets/tela-planilha.webp" width="900" height="810" alt="Planilha da semana 1 com os treinos de sábado, segunda e quarta" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="tela-img"><img src="/pbs-cd/assets/tela-planilha.webp" width="900" height="810" alt="Planilha da semana 1 com os treinos de sábado, segunda e quarta" loading="lazy" decoding="async" draggable="false"></figure>
     </article>
     <article class="tela">
       <div class="tela-txt">
@@ -228,7 +232,7 @@ footer p+p{margin-top:5px}
         <h3>Treino de glúteos</h3>
         <p>Cada exercício tem vídeo e a quantidade exata de séries e repetições.</p>
       </div>
-      <figure class="tela-img"><img src="assets/ex-gluteos.webp" width="900" height="810" alt="Treino de glúteos com frog no solo, glúteo 4 apoios, ostra e extensão de quadril" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="tela-img"><img src="/pbs-cd/assets/ex-gluteos.webp" width="900" height="810" alt="Treino de glúteos com frog no solo, glúteo 4 apoios, ostra e extensão de quadril" loading="lazy" decoding="async" draggable="false"></figure>
     </article>
     <article class="tela">
       <div class="tela-txt">
@@ -236,7 +240,7 @@ footer p+p{margin-top:5px}
         <h3>Treino de pernas</h3>
         <p>Você vê o que fazer em cada dia e só segue o vídeo.</p>
       </div>
-      <figure class="tela-img"><img src="assets/ex-pernas.webp" width="900" height="810" alt="Treino de pernas com agachamento, afundo, passada lateral e elevação pélvica" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="tela-img"><img src="/pbs-cd/assets/ex-pernas.webp" width="900" height="810" alt="Treino de pernas com agachamento, afundo, passada lateral e elevação pélvica" loading="lazy" decoding="async" draggable="false"></figure>
     </article>
     <article class="tela">
       <div class="tela-txt">
@@ -244,7 +248,7 @@ footer p+p{margin-top:5px}
         <h3>Treino de abdução</h3>
         <p>Cada treino da semana tem um foco diferente.</p>
       </div>
-      <figure class="tela-img"><img src="assets/ex-abducao.webp" width="900" height="810" alt="Treino de abdução com extensão de quadril, ostra, passada lateral e glúteo 4 apoios" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="tela-img"><img src="/pbs-cd/assets/ex-abducao.webp" width="900" height="810" alt="Treino de abdução com extensão de quadril, ostra, passada lateral e glúteo 4 apoios" loading="lazy" decoding="async" draggable="false"></figure>
     </article>
     <article class="tela">
       <div class="tela-txt">
@@ -252,7 +256,7 @@ footer p+p{margin-top:5px}
         <h3>Acompanhe sua evolução</h3>
         <p>Veja quantos treinos já fez, os minutos treinados e a sua constância.</p>
       </div>
-      <figure class="tela-img"><img src="assets/tela-progresso.webp" width="900" height="810" alt="Tela de progresso com a porcentagem do plano, os treinos feitos e os minutos treinados" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="tela-img"><img src="/pbs-cd/assets/tela-progresso.webp" width="900" height="810" alt="Tela de progresso com a porcentagem do plano, os treinos feitos e os minutos treinados" loading="lazy" decoding="async" draggable="false"></figure>
     </article>
   </div>
   <div class="pontos" id="pontos" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
